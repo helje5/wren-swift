@@ -4,7 +4,7 @@ A Swift package and wrapper for the [wren](https://wren.io) scripting language.
 There is a good [QA](https://wren.io/qa.html) on wren. It's a very small embeddable
 language similar to Lua, but w/o the weirdness.
 
-This is not complete and we may not finish it. A major thing missing in wren is 
+A major thing missing in wren is 
 [reentrancy](https://github.com/wren-lang/wren/issues/487)
 with the host environment.
 Another issue is that host functions do not get any function environment,
