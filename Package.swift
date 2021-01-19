@@ -6,14 +6,14 @@ let package = Package(
     name: "wren-swift",
     
     products: [
-      .library(name: "CWren", targets: [ "Wren" ]),
-      .library(name: "Wren",  targets: [ "Wren" ])
+      .library(name: "CWren", targets: [ "CWren" ]),
+      .library(name: "Wren",  targets: [ "Wren"  ])
     ],
     
     targets: [
       .target(name: "CWren", exclude: [ "AUTHORS", "LICENSE" ]),
-      .target(name: "Wren",  dependencies: [ "Cwren" ]),
-      .testTarget(name: "CWrenTests", dependencies: ["Cwren"]),
+      .target(name: "Wren",  dependencies: [ "CWren" ]),
+      .testTarget(name: "CWrenTests", dependencies: ["CWren"]),
       .testTarget(name: "WrenTests",  dependencies: ["Wren"])
     ]
 )
