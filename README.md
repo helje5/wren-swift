@@ -27,7 +27,7 @@ class Account {
 }
 
 var account = Account.new(1000)
-account.withdraw(100)```
+account.withdraw(100)
 ```
 
 ### What does the Swift Wrapper look like
