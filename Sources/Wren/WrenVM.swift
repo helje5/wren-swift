@@ -7,12 +7,14 @@
 //
 
 import CWren
+import struct Foundation.Data
 
 /**
  * This represents a Wren virtual machine.
  *
  * To communicate between Swift and Wren, one can use slots.
  */
+@dynamicMemberLookup
 public final class WrenVM {
     
   let vm            : OpaquePointer
@@ -145,6 +147,13 @@ public final class WrenVM {
         assertionFailure("unexpected result: \(result)")
         if let error = lastError { throw error }
     }
+  }
+  
+  
+  // MARK: - Dynamic Member Lookup
+    
+  public subscript(dynamicMember key: String) -> VMModule {
+    return VMModule(vm: self, name: key)
   }
 }
 

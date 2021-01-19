@@ -7,6 +7,9 @@ language similar to Lua, but w/o the weirdness.
 This is not complete and we may not finish it. A major thing missing in wren is 
 [reentrancy](https://github.com/wren-lang/wren/issues/487)
 with the host environment.
+Another issue is that host functions do not get any function environment,
+i.e. no function specific userdata pointer, or other means which would allow
+a trampoline.
 PRs are still welcome, and we'll see where wren is going in the future.
 
 This SwiftPM package embeds Wren itself, i.e. it contains the amalgation in a vendored

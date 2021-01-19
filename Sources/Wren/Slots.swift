@@ -132,7 +132,7 @@ public extension WrenVM {
     // MARK: - Value Lookup
 
     public subscript(slotIndex: Int) -> Value {
-      set {
+      nonmutating set {
         switch newValue {
           case .none                 : wrenSetSlotNull(vm.vm, Int32(slotIndex))
           case .bool  (let flag)     : self[bool: slotIndex] = flag
