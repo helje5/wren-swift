@@ -58,6 +58,13 @@ public extension WrenVM {
         return slots[0]
       }
     }
+    
+    @discardableResult
+    public func dynamicallyCall(withArguments args: [ WrenValueConvertible ])
+                  throws -> Value
+    {
+      return try self.dynamicallyCall(withArguments: args.map { $0.wrenValue })
+    }
   }
   
   @dynamicMemberLookup

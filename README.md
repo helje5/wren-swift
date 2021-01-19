@@ -43,6 +43,12 @@ try vm.interpret(
 )
 ```
 
+Using dynamicCallable:
+```swift
+let vm = WrenVM()
+try vm.main.System.print("Hello World!")
+```
+
 
 ### Links
 

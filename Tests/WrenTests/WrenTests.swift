@@ -51,9 +51,6 @@ final class WrenTests: XCTestCase {
   func testSystemCall() throws {
     let vm = WrenVM()
     
-    // make sure we have a `main` module
-    try vm.interpret("", in: "main")
-
     // This must happen before each call, i.e. it's gone after calling
     // `interpret`
     vm.slots.ensureCapacity(4)

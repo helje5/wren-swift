@@ -12,6 +12,10 @@ import struct Foundation.Data
 /**
  * This represents a Wren virtual machine.
  *
+ * Simple example:
+ *
+ *     try vm.main.System.print("Hello World!")
+ *
  * To communicate between Swift and Wren, one can use slots.
  */
 @dynamicMemberLookup
@@ -40,6 +44,8 @@ public final class WrenVM {
     self.vm = vm
     
     wrenSetUserData(vm, Unmanaged.passUnretained(self).toOpaque())
+
+    try? interpret("", in: "main") // make sure we have a `main` module
   }
   deinit {
     wrenFreeVM(vm)
